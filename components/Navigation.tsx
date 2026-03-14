@@ -65,34 +65,34 @@ export function Navigation() {
           </div>
         </nav>
 
-        {/* Book a call + Mail : une seule box */}
-        <div className="flex h-11 shrink-0 items-center gap-1.5 rounded-[56px] bg-card px-2.5 shadow-sm lg:h-12 lg:gap-2 lg:px-3">
+        {/* Book a call + Mail : deux box côte à côte, alignées à droite */}
+        <div className="flex shrink-0 items-center gap-2 lg:gap-3">
           <Link
             href="#contact"
-            className="flex items-center justify-center rounded-[56px] px-3 py-2 text-xs font-medium text-foreground transition-colors hover:bg-separator/30 lg:px-4 lg:py-2 lg:text-sm"
+            className="flex h-11 shrink-0 items-center justify-center rounded-[56px] bg-card px-4 py-2 text-xs font-medium text-foreground shadow-sm transition-colors hover:bg-separator/30 lg:h-12 lg:px-5 lg:py-2.5 lg:text-sm"
           >
             Book a call
           </Link>
           <a
             href="mailto:hello@example.com"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-accent transition-colors hover:bg-accent/10 lg:h-9 lg:w-9"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[56px] bg-card text-accent shadow-sm transition-colors hover:bg-accent/10 lg:h-12 lg:w-12"
             aria-label="Envoyer un email"
           >
-<svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
-          </svg>
-        </a>
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
 

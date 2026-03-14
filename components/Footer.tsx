@@ -1,71 +1,151 @@
 "use client";
 
-const socialLinks = [
-  {
-    href: "https://instagram.com",
-    aria: "Instagram",
-    icon: (
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-    ),
-  },
-  {
-    href: "https://dribbble.com",
-    aria: "Dribbble",
-    icon: (
-      <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.156 3.049 1.587 5.625 1.587 5.625 3.403-1.516 5.312-4.933 5.312-8.965a11.94 11.94 0 0 0-.515-3.222zM12 2.163c.892 0 1.754.115 2.573.33-.615 2.27-2.42 8.282-2.42 8.282-3.768-.17-7.416-.996-10.298-2.643A9.996 9.996 0 0 1 12 2.163zM7.27 20.992c.394-.565 1.633-2.235 2.773-4.628 2.086.39 4.006 1.49 5.26 2.79a10.02 10.02 0 0 1-8.033 1.838zM2.163 12c0-.244.013-.485.038-.724 2.316 1.762 5.318 2.547 8.431 2.547.09 0 .18-.002.269-.005-.102 1.066-.217 2.082-.354 3.056-3.405 1.127-6.496 2.505-8.966 4.348A9.99 9.99 0 0 1 2.163 12zm9.837 9.837a9.97 9.97 0 0 1-4.478-1.06c1.513-1.963 3.748-3.523 6.386-4.478.98 2.834 1.646 5.996 1.846 8.77a10.017 10.017 0 0 1-3.754-3.232z" />
-    ),
-  },
-  {
-    href: "https://twitter.com",
-    aria: "Twitter",
-    icon: (
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    ),
-  },
-  {
-    href: "https://linkedin.com",
-    aria: "LinkedIn",
-    icon: (
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    ),
-  },
+import Link from "next/link";
+
+const footerLinks = [
+  { href: "#projects", label: "All Projects" },
+  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "About" },
+  { href: "/404", label: "404" },
+];
+
+const socialPills = [
+  { href: "https://dribbble.com", label: "Dribbble", color: "#EA4C89" },
+  { href: "https://behance.net", label: "Behance", color: "#1769FF" },
+  { href: "https://figma.com", label: "Figma", color: "#F24E1E" },
+  { href: "https://x.com", label: "X", color: "#000000" },
 ];
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="border-t border-separator bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted text-xs">
-            © {year} Portfolica
-          </p>
-          <ul className="flex items-center gap-6">
-            {socialLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.aria}
-                  className="text-foreground hover:text-accent transition-colors duration-200"
+    <>
+      {/* Section pré-footer : Socials, Links, Newsletter */}
+      <section className="border-t border-separator bg-background py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
+            {/* Colonne Socials */}
+            <div>
+              <h3 className="text-sm font-semibold tracking-wider text-[#27272A] lg:text-base">
+                Socials
+              </h3>
+              <div className="mt-6 rounded-2xl p-4 lg:p-5">
+                <div className="flex items-start gap-4">
+                  <span
+                    className="flex h-[178px] w-[136px] shrink-0 items-center justify-center rounded-2xl bg-accent"
+                    aria-hidden
+                  >
+                    <svg
+                      className="h-12 w-12 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden
+                    >
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                  </span>
+                  <div className="flex flex-col gap-2">
+                    {socialPills.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-fit items-center gap-2 rounded-full border border-[#7F7F87] bg-transparent px-4 py-2 text-sm font-medium text-[#7F7F87] transition-colors hover:border-[#7F7F87]/80 hover:text-[#27272A]"
+                      >
+                        <span
+                          className="h-4 w-4 rounded-full"
+                          style={{ backgroundColor: item.color }}
+                          aria-hidden
+                        />
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Colonne Links */}
+            <div>
+              <h3 className="text-sm font-semibold tracking-wider text-[#27272A] lg:text-base">
+                Links
+              </h3>
+              <div className="mt-6 rounded-2xl p-4 lg:p-5">
+                <ul className="flex flex-col gap-2">
+                  {footerLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-[#7F7F87] transition-colors hover:text-accent lg:text-base"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Colonne Newsletter */}
+            <div>
+              <h3 className="text-sm font-semibold tracking-wider text-[#27272A] lg:text-base">
+                Newsletter
+              </h3>
+              <p className="mt-6 max-w-sm font-clash text-base font-normal leading-relaxed text-[#71717A]">
+                Subscribe to get early access to special offers, design
+                discounts, and exclusive project updates.
+              </p>
+              <form className="mt-4 flex gap-2" onSubmit={(e) => e.preventDefault()}>
+                <input
+                  type="email"
+                  placeholder="jane@brand.com"
+                  className="flex-1 rounded-full border border-separator bg-[#F4F4F5] px-4 py-3 text-sm text-[#27272A] placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                />
+                <button
+                  type="submit"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-opacity hover:opacity-90"
+                  aria-label="S&apos;abonner"
                 >
-                  <span className="sr-only">{link.aria}</span>
                   <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden
                   >
-                    {link.icon}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
                   </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
+      </section>
+
+      {/* Barre footer : liens légaux, Built in, boutons */}
+      <footer className="border-t border-separator bg-[#EBEBEB] py-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 lg:flex-row lg:px-8">
+          <div className="flex items-center gap-6">
+            <Link
+              href="/privacy"
+              className="text-sm text-[#27272A] transition-colors hover:underline"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-sm text-[#27272A] transition-colors hover:underline"
+            >
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
