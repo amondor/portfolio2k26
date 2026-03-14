@@ -10,7 +10,7 @@ export function ContactSection() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.h2
-          className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-foreground mb-16 lg:mb-20"
+          className="font-clash font-medium text-2xl sm:text-3xl lg:text-4xl text-foreground mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -70,7 +70,7 @@ export function ContactSection() {
               Send message
             </button>
           </form>
-          <p className="mt-8 text-muted text-sm">
+          <p className="mt-8 text-muted text-xs">
             <a href="mailto:hello@example.com" className="hover:text-accent transition-colors">
               hello@example.com
             </a>

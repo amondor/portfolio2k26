@@ -55,7 +55,7 @@ export function ExperienceSection() {
       <section id="about" className="py-24 lg:py-32 border-t border-separator">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.h2
-            className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-foreground mb-16 lg:mb-20"
+            className="font-clash font-medium text-2xl sm:text-3xl lg:text-4xl text-foreground mb-16 lg:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -82,10 +82,10 @@ export function ExperienceSection() {
                   <span className="text-muted/70 text-lg" aria-hidden>
                     {item.icon}
                   </span>
-                  <h3 className="font-clash font-medium text-xl text-foreground mt-2">
+                  <h3 className="font-clash font-medium text-lg text-foreground mt-2">
                     {item.title}
                   </h3>
-                  <p className="text-muted mt-2 leading-relaxed">
+                  <p className="text-muted text-sm mt-2 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -98,7 +98,7 @@ export function ExperienceSection() {
       <section className="py-24 lg:py-32 border-t border-separator">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.h2
-            className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-foreground mb-16 lg:mb-20"
+            className="font-clash font-medium text-2xl sm:text-3xl lg:text-4xl text-foreground mb-16 lg:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -121,13 +121,13 @@ export function ExperienceSection() {
                 }}
                 className="py-8 lg:py-10 first:pt-0"
               >
-                <p className="text-muted text-sm font-medium">
+                <p className="text-muted text-xs font-medium">
                   {exp.year}
                 </p>
-                <h3 className="font-clash font-medium text-xl text-foreground mt-1">
+                <h3 className="font-clash font-medium text-lg text-foreground mt-1">
                   {exp.role} · {exp.company}
                 </h3>
-                <p className="text-muted mt-2 leading-relaxed max-w-2xl">
+                <p className="text-muted text-sm mt-2 leading-relaxed max-w-2xl">
                   {exp.description}
                 </p>
               </motion.li>

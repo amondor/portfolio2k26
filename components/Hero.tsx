@@ -30,13 +30,13 @@ export function Hero() {
         >
           <div className="space-y-8">
             <motion.h1
-              className="font-clash font-medium text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-foreground leading-[1.1] tracking-tight"
+              className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-foreground leading-[1.1] tracking-tight"
               variants={fadeUp}
             >
               Make it your own, show your work to the world.
             </motion.h1>
             <motion.p
-              className="text-muted text-lg lg:text-xl max-w-xl leading-relaxed"
+              className="text-muted text-base lg:text-lg max-w-xl leading-relaxed"
               variants={fadeUp}
             >
               Designer & developer focused on creating distinctive digital
