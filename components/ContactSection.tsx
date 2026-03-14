@@ -10,7 +10,7 @@ export function ContactSection() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.h2
-          className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-accent mb-16 lg:mb-20"
+          className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-foreground mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -36,7 +36,7 @@ export function ContactSection() {
                 name="name"
                 type="text"
                 placeholder="Name"
-                className="w-full rounded-lg border border-separator bg-background px-4 py-3 text-foreground placeholder:text-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                className="w-full rounded-lg border border-separator bg-card px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
               />
             </div>
             <div>
@@ -48,7 +48,7 @@ export function ContactSection() {
                 name="email"
                 type="email"
                 placeholder="Email"
-                className="w-full rounded-lg border border-separator bg-background px-4 py-3 text-foreground placeholder:text-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                className="w-full rounded-lg border border-separator bg-card px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
               />
             </div>
             <div>
@@ -60,17 +60,17 @@ export function ContactSection() {
                 name="message"
                 rows={4}
                 placeholder="Message"
-                className="w-full rounded-lg border border-separator bg-background px-4 py-3 text-foreground placeholder:text-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors resize-none"
+                className="w-full rounded-lg border border-separator bg-card px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors resize-none"
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 transition-colors duration-200"
+              className="inline-flex items-center justify-center rounded-button bg-accent hover:bg-accent/90 text-white font-medium px-6 py-3 transition-colors duration-200"
             >
               Send message
             </button>
           </form>
-          <p className="mt-8 text-foreground/70 text-sm">
+          <p className="mt-8 text-muted text-sm">
             <a href="mailto:hello@example.com" className="hover:text-accent transition-colors">
               hello@example.com
             </a>

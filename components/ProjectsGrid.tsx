@@ -35,7 +35,7 @@ export function ProjectsGrid() {
     <section id="projects" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.h2
-          className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-accent mb-16 lg:mb-20"
+          className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-foreground mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -59,16 +59,16 @@ export function ProjectsGrid() {
               className="group"
             >
               <Link href="#" className="block">
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-separator/30 mb-4">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-card border border-separator mb-4">
                   <div
                     className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105"
                     style={{ background: project.gradient }}
                   />
                 </div>
-                <h3 className="font-clash font-medium text-xl text-accent">
+                <h3 className="font-clash font-medium text-xl text-foreground">
                   {project.title}
                 </h3>
-                <p className="text-foreground/60 text-sm mt-1">
+                <p className="text-muted text-sm mt-1">
                   {project.category}
                 </p>
               </Link>
@@ -96,7 +96,7 @@ export function ProjectsGrid() {
         >
           <Link
             href="#"
-            className="inline-flex items-center justify-center rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 transition-colors duration-200"
+            className="inline-flex items-center justify-center rounded-button bg-accent hover:bg-accent/90 text-white font-medium px-6 py-3 transition-colors duration-200"
           >
             View all projects
           </Link>

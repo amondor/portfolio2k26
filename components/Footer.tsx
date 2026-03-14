@@ -38,7 +38,7 @@ export function Footer() {
     <footer className="border-t border-separator bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-foreground/70 text-sm">
+          <p className="text-muted text-sm">
             © {year} Portfolica
           </p>
           <ul className="flex items-center gap-6">

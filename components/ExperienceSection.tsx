@@ -55,7 +55,7 @@ export function ExperienceSection() {
       <section id="about" className="py-24 lg:py-32 border-t border-separator">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.h2
-            className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-accent mb-16 lg:mb-20"
+            className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-foreground mb-16 lg:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -79,13 +79,13 @@ export function ExperienceSection() {
                 className="py-6 lg:py-8 border-b border-separator sm:even:border-s sm:even:border-separator"
               >
                 <div className="pr-6 lg:pr-8">
-                  <span className="text-foreground/40 text-lg" aria-hidden>
+                  <span className="text-muted/70 text-lg" aria-hidden>
                     {item.icon}
                   </span>
-                  <h3 className="font-clash font-medium text-xl text-accent mt-2">
+                  <h3 className="font-clash font-medium text-xl text-foreground mt-2">
                     {item.title}
                   </h3>
-                  <p className="text-foreground/80 mt-2 leading-relaxed">
+                  <p className="text-muted mt-2 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -98,7 +98,7 @@ export function ExperienceSection() {
       <section className="py-24 lg:py-32 border-t border-separator">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.h2
-            className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-accent mb-16 lg:mb-20"
+            className="font-clash font-medium text-3xl sm:text-4xl lg:text-5xl text-foreground mb-16 lg:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -121,13 +121,13 @@ export function ExperienceSection() {
                 }}
                 className="py-8 lg:py-10 first:pt-0"
               >
-                <p className="text-foreground/60 text-sm font-medium">
+                <p className="text-muted text-sm font-medium">
                   {exp.year}
                 </p>
-                <h3 className="font-clash font-medium text-xl text-accent mt-1">
+                <h3 className="font-clash font-medium text-xl text-foreground mt-1">
                   {exp.role} · {exp.company}
                 </h3>
-                <p className="text-foreground/80 mt-2 leading-relaxed max-w-2xl">
+                <p className="text-muted mt-2 leading-relaxed max-w-2xl">
                   {exp.description}
                 </p>
               </motion.li>

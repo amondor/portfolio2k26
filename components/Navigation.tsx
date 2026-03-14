@@ -14,10 +14,10 @@ export function Navigation() {
       <nav className="mx-auto max-w-7xl px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-2 text-accent font-clash font-medium tracking-tight"
+          className="flex items-center gap-2 text-foreground font-clash font-medium tracking-tight"
         >
           <span className="flex gap-0.5">
-            <span className="w-2.5 h-2.5 bg-orange-500 rounded-sm" />
+            <span className="w-2.5 h-2.5 bg-accent rounded-sm" />
             <span className="w-2.5 h-2.5 bg-accent rounded-sm" />
           </span>
           <span className="text-sm font-semibold uppercase tracking-wider">

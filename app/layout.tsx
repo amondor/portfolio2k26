@@ -1,14 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "@/app/globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const clashGrotesk = localFont({
+  src: [
+    {
+      path: "./fonts/ClashGrotesk-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ClashGrotesk-Semibold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ClashGrotesk-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-clash",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -22,14 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={inter.variable}>
-      <head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="min-h-screen">
+    <html lang="fr" className={clashGrotesk.variable}>
+      <body className="min-h-screen font-sans">
         <SmoothScroll>
           <Navigation />
           <main>{children}</main>

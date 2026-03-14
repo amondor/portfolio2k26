@@ -30,13 +30,13 @@ export function Hero() {
         >
           <div className="space-y-8">
             <motion.h1
-              className="font-clash font-medium text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-accent leading-[1.1] tracking-tight"
+              className="font-clash font-medium text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-foreground leading-[1.1] tracking-tight"
               variants={fadeUp}
             >
               Make it your own, show your work to the world.
             </motion.h1>
             <motion.p
-              className="text-foreground/80 text-lg lg:text-xl max-w-xl leading-relaxed"
+              className="text-muted text-lg lg:text-xl max-w-xl leading-relaxed"
               variants={fadeUp}
             >
               Designer & developer focused on creating distinctive digital
@@ -46,7 +46,7 @@ export function Hero() {
             <motion.div variants={fadeUp}>
               <Link
                 href="#projects"
-                className="inline-flex items-center justify-center rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 transition-colors duration-200"
+                className="inline-flex items-center justify-center rounded-button bg-accent hover:bg-accent/90 text-white font-medium px-6 py-3 transition-colors duration-200"
               >
                 View on Framer
               </Link>

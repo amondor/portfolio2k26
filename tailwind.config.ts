@@ -9,14 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#F5F5F5",
-        foreground: "#1A1A1A",
-        accent: "#000000",
+        background: "#F4F4F5",
+        foreground: "#27272A",
+        card: "#FFFFFF",
+        muted: "#52525B",
+        accent: "#F64617",
         separator: "#E5E5E5",
       },
+      borderRadius: {
+        button: "56px",
+      },
       fontFamily: {
-        clash: ["var(--font-clash-grotesk)", "system-ui", "sans-serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        clash: ["var(--font-clash)", "system-ui", "sans-serif"],
+        sans: ["var(--font-clash)", "system-ui", "sans-serif"],
       },
       fontWeight: {
         "clash-medium": "500",
