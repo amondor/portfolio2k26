@@ -62,16 +62,7 @@ export function AboutMeSection() {
           >
             Mindset, methods,
             <br />
-            <span className="relative inline-block">
-              <span className="relative">
-                &
-                <span
-                  className="absolute left-1/2 top-full mt-0.5 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-red-500"
-                  aria-hidden
-                />
-              </span>{" "}
-              experience
-            </span>
+            & experience
           </motion.h2>
         </div>
 
@@ -137,6 +128,30 @@ export function AboutMeSection() {
               </div>
             </motion.article>
           ))}
+
+          {/* Clients & collaborators */}
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col gap-8 rounded-2xl border border-separator bg-card p-6 shadow-sm lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:p-10"
+          >
+            <h3 className="font-clash text-lg font-medium text-[#27272A] lg:text-xl">
+              Clients & collaborators
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-14">
+              <span className="font-clash text-sm font-medium text-[#27272A] lg:text-base">
+                Logo Ipsum
+              </span>
+              <span className="font-clash text-sm font-medium text-[#27272A] lg:text-base">
+                Logostyl
+              </span>
+              <span className="font-clash text-sm font-medium text-[#27272A] lg:text-base">
+                Logoipsum
+              </span>
+            </div>
+          </motion.article>
         </div>
       </div>
     </section>
