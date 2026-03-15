@@ -22,7 +22,7 @@ export function SmoothScroll({ children, options }: SmoothScrollProps) {
         smoothWheel: true,
         ...options,
       }}
-      className="h-full"
+      className="min-h-screen"
     >
       {children}
     </ReactLenis>

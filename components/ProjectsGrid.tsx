@@ -2,33 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { projects } from "@/data/projects";
 
-const projects = [
-  {
-    id: 1,
-    name: "Connecto",
-    year: "2023",
-    gradient: "linear-gradient(180deg, #D4E157 0%, #26A69A 100%)",
-  },
-  {
-    id: 2,
-    name: "PayNest",
-    year: "2024",
-    gradient: "linear-gradient(180deg, #FFE0B2 0%, #E53935 100%)",
-  },
-  {
-    id: 3,
-    name: "Project name",
-    year: "2023",
-    gradient: "linear-gradient(180deg, #B3E5FC 0%, #5C6BC0 100%)",
-  },
-  {
-    id: 4,
-    name: "Project name",
-    year: "2024",
-    gradient: "linear-gradient(180deg, #E1BEE7 0%, #7B1FA2 100%)",
-  },
-];
+const latestProjects = [...projects]
+  .sort((a, b) => Number(b.year) - Number(a.year))
+  .slice(0, 4);
 
 export function ProjectsGrid() {
   return (
@@ -56,7 +34,7 @@ export function ProjectsGrid() {
         </div>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:gap-8">
-          {projects.map((project, index) => (
+          {latestProjects.map((project, index) => (
             <motion.article
               key={project.id}
               initial={{ opacity: 0, y: 24 }}
@@ -69,7 +47,7 @@ export function ProjectsGrid() {
               }}
               className="group"
             >
-              <Link href="#" className="block">
+              <Link href={project.href ?? "#"} className="block">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#E5E5E5]">
                   <div
                     className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105"

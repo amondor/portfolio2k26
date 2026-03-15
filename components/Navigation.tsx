@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "#projects", label: "All Projects" },
   { href: "#contact", label: "Contact" },
   { href: "/404", label: "404" },
@@ -105,7 +105,7 @@ export function Navigation() {
             className="fixed inset-0 z-40 bg-foreground/20 backdrop-blur-sm lg:hidden"
             aria-label="Fermer"
           />
-          <div className="fixed left-4 right-4 top-24 z-50 rounded-2xl bg-card p-6 shadow-lg lg:hidden">
+          <div className="fixed left-4 top-24 z-50 w-[70%] max-w-[320px] rounded-2xl bg-card p-6 shadow-lg lg:hidden">
             <ul className="flex flex-col gap-1">
               <li>
                 <Link

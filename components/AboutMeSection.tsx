@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+const clientLogos = ["Logo Ipsum", "Logostyl", "Logoipsum", "Logo"];
+
 const cards = [
   {
     id: 1,
@@ -31,10 +33,10 @@ const cards = [
     title: "Career",
     titleColor: "text-[#27272A]",
     items: [
-      { role: "Design Director", period: "2025 - Now" },
-      { role: "Sr. Product Designer", period: "2024 - 2025" },
-      { role: "Product Designer", period: "2015 - 2024" },
-      { role: "UI/UX Designer", period: "2012 - 2015" },
+      { role: "Software Engineer", period: "2025 - Now" },
+      { role: "Freelance Full Stack Developer", period: "Aug 2023 - May 2025" },
+      { role: "Full Stack Developer", period: "Aug 2021 - sep 2022" },
+      { role: "Full Stack Developer", period: "2019 - 2021" },
     ],
   },
 ];
@@ -66,20 +68,17 @@ export function AboutMeSection() {
           </motion.h2>
         </div>
 
-        <div className="mt-16 flex flex-col gap-6">
+        <div className="mt-16">
           {cards.map((card, index) => (
-            <motion.article
+            <div
               key={card.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="rounded-2xl border border-separator bg-card p-6 shadow-sm lg:p-8"
+              className="min-h-[120px]"
+              style={{ paddingTop: index === 0 ? 0 : "0.5rem" }}
             >
+              <motion.article
+                className="sticky top-24 rounded-2xl border border-separator bg-card p-6 shadow-lg lg:top-28 lg:p-8"
+                style={{ zIndex: index + 1 }}
+              >
               <div className="flex gap-4">
                 <span
                   className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${card.bulletColor}`}
@@ -126,34 +125,50 @@ export function AboutMeSection() {
                   )}
                 </div>
               </div>
-            </motion.article>
+              </motion.article>
+            </div>
           ))}
 
-          {/* Clients & collaborators */}
+        </div>
+      </div>
+
+      {/* Clients & collaborators - full width 1200x300 */}
+      <div className="mt-16 w-full px-6 lg:px-8">
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col gap-8 rounded-2xl border border-separator bg-card p-6 shadow-sm lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:p-10"
+            className="mx-auto w-full max-w-[1200px] overflow-hidden rounded-[120px] border border-separator bg-card shadow-sm"
+            style={{ height: 300 }}
           >
-            <h3 className="font-clash text-lg font-medium text-[#27272A] lg:text-xl">
-              Clients & collaborators
-            </h3>
-            <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-14">
-              <span className="font-clash text-sm font-medium text-[#27272A] lg:text-base">
-                Logo Ipsum
-              </span>
-              <span className="font-clash text-sm font-medium text-[#27272A] lg:text-base">
-                Logostyl
-              </span>
-              <span className="font-clash text-sm font-medium text-[#27272A] lg:text-base">
-                Logoipsum
-              </span>
+            <div className="flex h-full items-center gap-12 px-8">
+              <h3 className="shrink-0 font-clash text-lg font-medium text-[#27272A] lg:text-xl">
+                Clients & collaborators
+              </h3>
+              <div className="min-w-0 flex-1 overflow-hidden">
+                <motion.div
+                  className="flex w-max gap-16"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  {[...clientLogos, ...clientLogos].map((logo, i) => (
+                    <span
+                      key={i}
+                      className="shrink-0 font-clash text-sm font-medium text-[#27272A] lg:text-base"
+                    >
+                      {logo}
+                    </span>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </motion.article>
         </div>
-      </div>
     </section>
   );
 }

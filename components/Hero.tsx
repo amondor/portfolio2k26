@@ -3,6 +3,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+const cardsData = [
+  { gradient: "linear-gradient(135deg, #e5e5e5 0%, #f5f5f5 100%)" },
+  { gradient: "linear-gradient(135deg, #d4d4d4 0%, #e5e5e5 100%)" },
+  { gradient: "linear-gradient(135deg, #a3a3a3 0%, #d4d4d4 100%)" },
+  { gradient: "linear-gradient(135deg, #737373 0%, #a3a3a3 100%)" },
+  { gradient: "linear-gradient(135deg, #525252 0%, #737373 100%)" },
+];
+
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
@@ -28,8 +36,8 @@ export function Hero() {
           initial="initial"
           animate="animate"
         >
-          {/* Colonne gauche : nom + icône profil */}
-          <div className="flex flex-wrap items-baseline gap-3 lg:gap-4">
+          {/* Colonne gauche : nom */}
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-2">
             <div className="flex flex-wrap items-baseline gap-3 lg:gap-4">
               <motion.span
                 className="font-clash text-[96px] font-medium leading-tight tracking-tight text-[#27272A]"
@@ -37,23 +45,9 @@ export function Hero() {
               >
                 Andrew
               </motion.span>
-              <motion.span
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent sm:h-14 sm:w-14 lg:h-16 lg:w-16"
-                variants={fadeUp}
-                aria-hidden
-              >
-                <svg
-                  className="h-6 w-6 text-white sm:h-7 sm:w-7 lg:h-8 lg:w-8"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden
-                >
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </motion.span>
             </div>
             <motion.span
-              className="block font-clash text-[96px] font-medium leading-tight tracking-tight text-[#27272A]"
+              className="-mt-2 block font-clash text-[96px] font-medium leading-[1] tracking-tight text-[#27272A]"
               variants={fadeUp}
             >
               Mondor
@@ -110,36 +104,35 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Cartes horizontales (devices / visuels) */}
+        {/* Cartes horizontales (carrousel automatique) */}
         <motion.div
-          className="mt-12 flex gap-4 overflow-x-auto pb-2 lg:mt-16 lg:gap-6"
+          className="mt-12 overflow-hidden pb-2 lg:mt-16"
           variants={fadeUp}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className="h-[370px] w-[280px] shrink-0 rounded-2xl bg-separator/50"
-            >
+          <motion.div
+            className="flex w-max gap-4 lg:gap-6"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            {[...cardsData, ...cardsData].map((item, i) => (
               <div
-                className="h-full w-full rounded-2xl"
-                style={{
-                  background:
-                    i === 1
-                      ? "linear-gradient(135deg, #e5e5e5 0%, #f5f5f5 100%)"
-                      : i === 2
-                        ? "linear-gradient(135deg, #d4d4d4 0%, #e5e5e5 100%)"
-                        : i === 3
-                          ? "linear-gradient(135deg, #a3a3a3 0%, #d4d4d4 100%)"
-                          : i === 4
-                            ? "linear-gradient(135deg, #737373 0%, #a3a3a3 100%)"
-                            : "linear-gradient(135deg, #525252 0%, #737373 100%)",
-                }}
-              />
-            </div>
-          ))}
+                key={i}
+                className="h-[370px] w-[280px] shrink-0 rounded-2xl bg-separator/50"
+              >
+                <div
+                  className="h-full w-full rounded-2xl"
+                  style={{ background: item.gradient }}
+                />
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>
