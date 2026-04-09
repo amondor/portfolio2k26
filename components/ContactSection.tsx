@@ -71,8 +71,8 @@ export function ContactSection() {
             </button>
           </form>
           <p className="mt-8 text-muted text-xs">
-            <a href="mailto:hello@example.com" className="hover:text-accent transition-colors">
-              hello@example.com
+            <a href="mailto:mondor.andrew@gmail.com" className="hover:text-accent transition-colors">
+              mondor.andrew@gmail.com
             </a>
             {" · "}
             <a href="tel:+33123456789" className="hover:text-accent transition-colors">

@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 
-const clientLogos = ["Logo Ipsum", "Logostyl", "Logoipsum", "Logo"];
-
 const cards = [
   {
     id: 1,
@@ -14,13 +12,6 @@ const cards = [
   },
   {
     id: 2,
-    bulletColor: "bg-[#71717A]",
-    title: "Background",
-    titleColor: "text-[#27272A]",
-    text: "Originally from CDMX, I've been designing identities for 7+ years, working with startups, restaurants, hoteliers, & creative founders across Mexico.",
-  },
-  {
-    id: 3,
     bulletColor: "bg-red-500",
     title: "My Approach",
     titleColor: "text-accent",
@@ -28,7 +19,7 @@ const cards = [
     textWithDotAfter: "empathy.",
   },
   {
-    id: 4,
+    id: 3,
     bulletColor: "bg-[#71717A]",
     title: "Career",
     titleColor: "text-[#27272A]",
@@ -131,44 +122,6 @@ export function AboutMeSection() {
 
         </div>
       </div>
-
-      {/* Clients & collaborators - full width 1200x300 */}
-      <div className="mt-16 w-full px-6 lg:px-8">
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto w-full max-w-[1200px] overflow-hidden rounded-[120px] border border-separator bg-card shadow-sm"
-            style={{ height: 300 }}
-          >
-            <div className="flex h-full items-center gap-12 px-8">
-              <h3 className="shrink-0 font-clash text-lg font-medium text-[#27272A] lg:text-xl">
-                Clients & collaborators
-              </h3>
-              <div className="min-w-0 flex-1 overflow-hidden">
-                <motion.div
-                  className="flex w-max gap-16"
-                  animate={{ x: ["0%", "-50%"] }}
-                  transition={{
-                    duration: 25,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  {[...clientLogos, ...clientLogos].map((logo, i) => (
-                    <span
-                      key={i}
-                      className="shrink-0 font-clash text-sm font-medium text-[#27272A] lg:text-base"
-                    >
-                      {logo}
-                    </span>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-          </motion.article>
-        </div>
     </section>
   );
 }

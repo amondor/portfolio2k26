@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { socialNavItems } from "@/data/socialNavItems";
 
 const cardsData = [
   { gradient: "linear-gradient(135deg, #e5e5e5 0%, #f5f5f5 100%)" },
@@ -36,22 +37,48 @@ export function Hero() {
           initial="initial"
           animate="animate"
         >
-          {/* Colonne gauche : nom */}
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-2">
-            <div className="flex flex-wrap items-baseline gap-3 lg:gap-4">
+          {/* Colonne gauche : nom + titre */}
+          <div className="flex flex-col gap-3 lg:gap-4">
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 lg:gap-x-4 lg:gap-y-2">
+              <div className="flex flex-wrap items-baseline gap-3 lg:gap-4">
+                <motion.span
+                  className="font-clash text-[96px] font-medium leading-tight tracking-tight text-[#27272A]"
+                  variants={fadeUp}
+                >
+                  Andrew
+                </motion.span>
+              </div>
               <motion.span
-                className="font-clash text-[96px] font-medium leading-tight tracking-tight text-[#27272A]"
+                className="-mt-2 block font-clash text-[96px] font-medium leading-[1] tracking-tight text-[#27272A]"
                 variants={fadeUp}
               >
-                Andrew
+                Mondor
               </motion.span>
             </div>
-            <motion.span
-              className="-mt-2 block font-clash text-[96px] font-medium leading-[1] tracking-tight text-[#27272A]"
+            <motion.p
+              className="font-clash text-2xl font-medium tracking-tight text-muted lg:text-3xl"
               variants={fadeUp}
             >
-              Mondor
-            </motion.span>
+              Software engineer
+            </motion.p>
+            <motion.nav
+              className="flex flex-wrap items-center gap-5 pt-1 lg:gap-6"
+              variants={fadeUp}
+              aria-label="Réseaux sociaux"
+            >
+              {socialNavItems.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted transition-colors hover:text-[#27272A]"
+                  aria-label={label}
+                >
+                  <Icon className="h-6 w-6 shrink-0 lg:h-7 lg:w-7" />
+                </a>
+              ))}
+            </motion.nav>
           </div>
 
           {/* Colonne droite : notation, description, boutons */}
@@ -84,8 +111,8 @@ export function Hero() {
               className="flex flex-wrap items-center gap-3"
               variants={fadeUp}
             >
-              <Link
-                href="#contact"
+              <a
+                href="mailto:mondor.andrew@gmail.com?subject=Start%20a%20project"
                 className="inline-flex items-center justify-center gap-2 rounded-button px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 lg:px-6 lg:py-3 lg:text-base"
                 style={{
                   background: "linear-gradient(90deg, #FF8A5C 0%, #F64617 100%)",
@@ -93,7 +120,7 @@ export function Hero() {
               >
                 Start a Project
                 <span aria-hidden>→</span>
-              </Link>
+              </a>
               <Link
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-button border border-separator bg-card px-5 py-2.5 text-sm font-medium text-[#27272A] transition-colors hover:bg-separator/30 lg:px-6 lg:py-3 lg:text-base"

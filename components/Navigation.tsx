@@ -7,7 +7,6 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "#projects", label: "All Projects" },
   { href: "#contact", label: "Contact" },
-  { href: "/404", label: "404" },
 ];
 
 export function Navigation() {
@@ -65,16 +64,30 @@ export function Navigation() {
           </div>
         </nav>
 
-        {/* Book a call + Mail : deux box côte à côte, alignées à droite */}
+        {/* Appel + Mail : deux icônes côte à côte, alignées à droite */}
         <div className="flex shrink-0 items-center gap-2 lg:gap-3">
-          <Link
-            href="#contact"
-            className="flex h-11 shrink-0 items-center justify-center rounded-[56px] bg-card px-4 py-2 text-xs font-medium text-foreground shadow-sm transition-colors hover:bg-separator/30 lg:h-12 lg:px-5 lg:py-2.5 lg:text-sm"
-          >
-            Book a call
-          </Link>
           <a
-            href="mailto:hello@example.com"
+            href="tel:+33640755282"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[56px] bg-card text-foreground shadow-sm transition-colors hover:bg-separator/30 lg:h-12 lg:w-12"
+            aria-label="Appeler le +33 6 40 75 52 82"
+          >
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:mondor.andrew@gmail.com"
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[56px] bg-card text-accent shadow-sm transition-colors hover:bg-accent/10 lg:h-12 lg:w-12"
             aria-label="Envoyer un email"
           >

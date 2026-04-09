@@ -1,7 +1,7 @@
 import { AboutHero } from "@/components/AboutHero";
 import { CareerHistorySection } from "@/components/CareerHistorySection";
 import { SkillsSection } from "@/components/SkillsSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
+// import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AboutCTASection } from "@/components/AboutCTASection";
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function AboutPage() {
       <AboutHero />
       <CareerHistorySection />
       <SkillsSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <AboutCTASection />
     </>
   );

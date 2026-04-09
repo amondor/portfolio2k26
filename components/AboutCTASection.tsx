@@ -35,8 +35,8 @@ export function AboutCTASection() {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/#contact"
+            <a
+              href="mailto:mondor.andrew@gmail.com?subject=Start%20a%20project"
               className="inline-flex items-center justify-center gap-2 rounded-button px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 lg:px-6 lg:py-3 lg:text-base"
               style={{
                 background: "linear-gradient(90deg, #FF8A5C 0%, #F64617 100%)",
@@ -44,7 +44,7 @@ export function AboutCTASection() {
             >
               Start a Project
               <span aria-hidden>→</span>
-            </Link>
+            </a>
             <Link
               href="/#projects"
               className="inline-flex items-center justify-center rounded-button border border-separator bg-card px-5 py-2.5 text-sm font-medium text-[#27272A] transition-colors hover:bg-separator/30 lg:px-6 lg:py-3 lg:text-base"
