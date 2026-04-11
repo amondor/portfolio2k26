@@ -8,6 +8,8 @@ export interface Project {
   name: string;
   year: string;
   gradient: string;
+  /** Image sous `/public` (ex. `/images/projets/nom.png`) — optionnel */
+  image?: string;
   /** URL du projet (optionnel) */
   href?: string;
   /** Courte description (optionnel) */
@@ -20,6 +22,7 @@ export const projects: Project[] = [
     name: "BBL Barber",
     year: "2025",
     gradient: "linear-gradient(180deg, #D4E157 0%, #26A69A 100%)",
+    image: "/images/projets/bblbarber.png",
     href: "https://bblbarber.fr/",
   },
   {

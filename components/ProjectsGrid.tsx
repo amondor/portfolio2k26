@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 
@@ -49,10 +50,24 @@ export function ProjectsGrid() {
             >
               <Link href={project.href ?? "#"} className="block">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#E5E5E5]">
-                  <div
-                    className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105"
-                    style={{ background: project.gradient }}
-                  />
+                  <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
+                    {project.image ? (
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={project.image}
+                          alt={project.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="absolute inset-0"
+                        style={{ background: project.gradient }}
+                      />
+                    )}
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 flex items-center">
                     <span className="rounded-full bg-white/90 px-4 py-2.5 font-clash text-sm text-[#27272A] backdrop-blur-sm">
