@@ -20,6 +20,7 @@ export const projects: Project[] = [
     name: "BBL Barber",
     year: "2025",
     gradient: "linear-gradient(180deg, #D4E157 0%, #26A69A 100%)",
+    href: "https://bblbarber.fr/",
   },
   {
     id: 2,
@@ -38,11 +39,13 @@ export const projects: Project[] = [
     name: "Boté Kréyol",
     year: "2024",
     gradient: "linear-gradient(180deg, #E1BEE7 0%, #7B1FA2 100%)",
+    href: "https://botekreyol.fr/",
   },
   {
     id: 5,
     name: "Boté Kréyol",
     year: "2023",
     gradient: "linear-gradient(180deg, #E1BEE7 0%, #7B1FA2 100%)",
+    href: "https://botekreyol.fr/",
   },
 ];

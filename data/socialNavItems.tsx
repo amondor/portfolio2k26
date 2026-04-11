@@ -45,6 +45,6 @@ function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
 export const socialNavItems: SocialNavItem[] = [
   { href: "https://www.instagram.com/superdrew__/", label: "Instagram", Icon: InstagramIcon },
   { href: "https://x.com/Anwmdr", label: "X", Icon: XIcon },
-  { href: "https://github.com/", label: "GitHub", Icon: GitHubIcon },
+  { href: "https://github.com/amondor", label: "GitHub", Icon: GitHubIcon },
   { href: "https://www.linkedin.com/in/andrew-mondor/", label: "LinkedIn", Icon: LinkedInIcon },
 ];

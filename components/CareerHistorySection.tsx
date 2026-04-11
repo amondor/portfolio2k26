@@ -5,7 +5,7 @@ import { careerEntries } from "@/data/career";
 
 export function CareerHistorySection() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-24 pt-28 lg:py-32 lg:pt-36">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           <motion.span
